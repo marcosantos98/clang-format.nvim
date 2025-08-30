@@ -10,7 +10,6 @@ function M.setup(opts)
 		pattern = {"*.c", "*.h"},
 		callback = function(ev)
 			local out = vim.fn.system({"clang-format", "-i", ev.match, "--style=file:" .. opts.clangFormatPath})
-			print(out)
 			vim.cmd("e!")
 		end
 	})
