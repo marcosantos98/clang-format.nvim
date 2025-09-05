@@ -10,6 +10,9 @@ function M.setup(opts)
 		pattern = {"*.c", "*.h"},
 		callback = function(ev)
 			local out = vim.fn.system({"clang-format", "-i", ev.match, "--style=file:" .. opts.clangFormatPath})
+			if out ~= '' then
+				print(out)
+			end
 			vim.cmd("checktime")
 		end
 	})
