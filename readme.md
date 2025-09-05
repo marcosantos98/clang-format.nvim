@@ -13,3 +13,9 @@ require('clang-format').setup({ clangFormatPath = <path> })
 ```
 
 - `clangFormatPath`: path to a file containing the style options.
+
+Btw, You can set `<path>` like a lua function.
+Example:
+```lua
+require('clang-format').setup({ clangFormatPath = os.getenv("HOME")..'/.clang-format' })
+```
